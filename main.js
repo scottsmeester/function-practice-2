@@ -146,28 +146,60 @@ var vowels = function(str){
 console.log(vowels());
 
 
-
 // #8
 
 // function called 'twins' which takes an array and returns true if every pair
 // of items in the array is the same
 
-var myTwinArrayTrue = ['a','a','b','b','c','c'];
-var myTwinArrayFalse = ['a','a','b','c','c','c'];
+var myTwinArray = ['a','a','b','b','c','c'];
+
+// var myTwinArrayTrue = ['a','a','b','b','c','c'];
+// var myTwinArrayFalse = ['a','a','b','c','c','c'];
 
 var twins = function(arr){
-	return myTwinArrayTrue.split('').reduce(function(count, letter){
-
-	}, 0
-	);
+	for (var i = 0; i < myTwinArray.length; i+=2) {
+		if (myTwinArray[i] !== myTwinArray[i+1]) {
+			return false;
+		}
+	}
+	return true;
 };
 
 console.log(twins());
 
 
+// #9
+
+// function called 'or' which takes an array of booleans and returns true if any
+// one of them is true. Given an empty array, return false. If you find an item 
+// that is true, the function should return true immediately and not continue checking further values.
+
+var booleanArray = [false,1,false,false,false,false,false];
+
+var or = function(arr){
+	for (var i = 0; i < booleanArray.length; i++) {
+		if (!!booleanArray[i]) {
+			return true;
+		}
+	}
+};
+
+console.log(or());
 
 
+// #10
 
+// function called 'unique' which takes an array of strings, and returns a new array 
+// consisting of the unique values (no duplicates)
 
+var myOtherArrayOfStrings = ['stop','go','stop','go','continue','stop'];
+
+var unique = function(arr){
+	return myOtherArrayOfStrings.filter(function(string, i){
+		return (myOtherArrayOfStrings.indexOf(string) === i);
+	});
+};
+
+console.log(unique());
 
 
