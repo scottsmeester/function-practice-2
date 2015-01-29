@@ -187,19 +187,24 @@ var or = function(arr){
 console.log(or());
 
 
-// #10
+// #10 - A
 
 // function called 'unique' which takes an array of strings, and returns a new array 
 // consisting of the unique values (no duplicates)
 
 var myOtherArrayOfStrings = ['stop','go','stop','go','continue','stop'];
 
-var unique = function(arr){
+var unique1 = function(arr){
 	return myOtherArrayOfStrings.filter(function(string, i){
 		return (myOtherArrayOfStrings.indexOf(string) === i);
 	});
 };
 
-console.log(unique());
+console.log('_unique1:',unique1());
+
+// #10 - b
+
+
+console.log('_unique2: ', _.uniq(myOtherArrayOfStrings));
 
 
