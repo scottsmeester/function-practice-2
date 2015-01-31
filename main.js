@@ -1,7 +1,8 @@
-
+	
 // function exercizes - trying to implement 'this'
 
 // #1 - a 
+
 // function called 'getName' which takes a single object argument and 
 // returns the value of the 'name' property of the given object
 var getName = function() {
@@ -13,6 +14,13 @@ var myObj = {
 };
 console.log(getName.call(myObj));
 
+// #1 - a 
+
+var getName1 = function(obj) {
+	return obj.name;
+};
+
+console.log(getName1(myObj));
 
 // #2 - a
 
@@ -138,9 +146,12 @@ var anotherSentence = "True humility is not thinking less of yourself; it is thi
 
 var vowels = function(str){
 	var toCheck = ['a','e','i','o','u'];
-	return anotherSentence.split('').filter(function(letter){
-		return  (toCheck.indexOf(letter) === -1);
-	}).join('');
+	return anotherSentence
+		.split('')
+		.filter(function(letter){
+			return  (toCheck.indexOf(letter) === -1);
+		})
+		.join('');
 };
 
 console.log(vowels());
@@ -195,7 +206,7 @@ console.log(or());
 var myOtherArrayOfStrings = ['stop','go','stop','go','continue','stop'];
 
 var unique1 = function(arr){
-	return myOtherArrayOfStrings.filter(function(string, i){
+	return myOtherArrayOfStrings.filter(function(string, i) {
 		return (myOtherArrayOfStrings.indexOf(string) === i);
 	});
 };
